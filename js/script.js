@@ -46,50 +46,68 @@
 // Punti fatti e falli subiti.
 // Infine usando la destrutturazione creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.
 
-const footballTeams = [
-    {
-        name:'roma',
-        point:0,
-        foulsSouffered:0
-    },
-    {
-        name:'inter',
-        point:0,
-        foulsSouffered:0
-    },
-    {
-        name:'napoli',
-        point:0,
-        foulsSouffered:0
-    },
-    {
-        name:'milan',
-        point:0,
-        foulsSouffered:0
-    },
-    {
-        name:'juve',
-        point:0,
-        foulsSouffered:0
-    },
-]
+// const footballTeams = [
+//     {
+//         name:'roma',
+//         point:0,
+//         foulsSouffered:0
+//     },
+//     {
+//         name:'inter',
+//         point:0,
+//         foulsSouffered:0
+//     },
+//     {
+//         name:'napoli',
+//         point:0,
+//         foulsSouffered:0
+//     },
+//     {
+//         name:'milan',
+//         point:0,
+//         foulsSouffered:0
+//     },
+//     {
+//         name:'juve',
+//         point:0,
+//         foulsSouffered:0
+//     },
+// ]
 
-footballTeams.forEach((team) =>{
-    team.point = Math.floor(Math.random() * 101);
-    team.foulsSouffered = Math.floor(Math.random() * 51);
-})
-console.log(footballTeams);
+// footballTeams.forEach((team) =>{
+//     team.point = Math.floor(Math.random() * 101);
+//     team.foulsSouffered = Math.floor(Math.random() * 51);
+// })
+// console.log(footballTeams);
 
-let newArray = []
-footballTeams.forEach((team) => {
-    const {name, foulsSouffered} = team
-    newArray.push({name, foulsSouffered})
-})
-console.log(newArray);
+// let newArray = []
+// footballTeams.forEach((team) => {
+//     const {name, foulsSouffered} = team
+//     newArray.push({name, foulsSouffered})
+// })
+// console.log(newArray);
 
 
+// Snack Bonus
+// Scrivere una funzione che accetti tre argomenti, un array e due numeri (a più piccolo di b).
+// La funzione ritornerà un nuovo array con i valori che hanno la posizione compresa tra i due numeri.
+// Usiamo i nuovi metodi degli array foreach o filter.
+
+const numbArray = [10,5,2,4,6,2,67,32,567,245,85]
+const newArray = getSubArray(numbArray,2,5)
 
 //////////////////////////////////////////////////////////////////
 //FUNCTION
 /////////////////////////////////////////////////////////////////
-
+function getSubArray(array,a,b){
+    // let subArray = []
+    // array.forEach((element,index) => {
+    //     if(index >= a && index <= b){
+    //       subArray.push(element)
+    //     }   
+    //     // console.log(subArray);
+    // }); 
+    // return subArray
+    return array.filter((elem,index) => index >= a && index <= b)
+}
+console.log(newArray);
